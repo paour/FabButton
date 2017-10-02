@@ -1,0 +1,11 @@
+loadPropertiesFile("local.properties")
+loadPropertiesFile("../local.properties")
+
+private void loadPropertiesFile(String filename) {
+    def file = file(filename)
+    if (!file.exists()) { return }
+
+    def localProps = new Properties()
+    localProps.load(file.newDataInputStream())
+    localProps.forEach { key, value -> rootProject.ext[key] = value }
+}

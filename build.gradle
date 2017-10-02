@@ -5,7 +5,7 @@ buildscript {
     ext.targetVersion = 26
     ext.toolsVersion = '26.0.1'
 
-    ext.googleLibraryVersion = '26.1.0'
+    ext.googleLibraryVersion = '26.0.2'
 
     repositories {
         jcenter()
@@ -13,11 +13,12 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0-beta6'
+        classpath 'com.android.tools.build:gradle:2.3.0'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
     }
 }
+
+apply from: './load-properties.gradle'
 
 allprojects {
     repositories {
